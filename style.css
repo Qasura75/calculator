@@ -1,3 +1,75 @@
-*{
-    background-color: bisque;
+* {
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: large;
+    font-weight: bold;
+}
+
+body{
+    background-color: rgb(249, 255, 217);
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: rgb(67, 74, 78);
+    padding: 70px;
+    width: 500px;
+    height: 700px;
+
+}
+
+.display {
+    background-color: rgb(37, 37, 37);
+    width: 500px;
+    height: 150px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.button-grid {
+    display: grid;
+    background-color: rgb(67, 74, 78);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 500px;
+}
+
+button {  
+    height: 110px;
+    width: auto;
+    margin: 0;
+    border: 0;
+    border-radius: 10px;
+}
+
+.numberBtn {
+    background-color: rgb(133, 54, 54);
+}
+
+.operatorBtn {
+    background-color: rgb(197, 138, 82);
+}
+
+.clearBtn {
+    background-color: rgb(117, 121, 189);
+}
+
+.equalBtn {
+    background-color: rgb(72, 126, 72);
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+button:active {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }

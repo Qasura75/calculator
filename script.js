@@ -1,4 +1,4 @@
-let numA;
+/*let numA;
 let numB;
 let operator;
 
