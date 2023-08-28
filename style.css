@@ -48,19 +48,19 @@ button {
     border-radius: 10px;
 }
 
-.numberBtn {
+.num-btn {
     background-color: rgb(133, 54, 54);
 }
 
-.operatorBtn {
+.operator-btn {
     background-color: rgb(197, 138, 82);
 }
 
-.clearBtn {
+.clear-btn {
     background-color: rgb(117, 121, 189);
 }
 
-.equalBtn {
+.equal-btn {
     background-color: rgb(72, 126, 72);
 }
 
