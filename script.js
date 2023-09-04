@@ -35,17 +35,18 @@ function operate(operator) {
 
   switch (operator) {
     case "+":
-      add(numA, numB)
+      return add(numA, numB)
       break;
     case "-":
-      subtract(numA, numB)
+      return subtract(numA, numB)
       break;
     case "*":
-      multiply(numA, numB)
+      return multiply(numA, numB)
       break;
     case "/":
-      divide(numA, numB)
-      break;
+      return divide(numA, numB)
+      default:
+        return numB;
   }
 }
 
@@ -62,12 +63,12 @@ numberButtons.forEach(button => {
 
     if(numberSwitch == true) {
       firstEntry += numberValue
-      numberA = parseInt(firstEntry);
+      numberA = parseFloat(firstEntry);
       displayValue.textContent = numberA;
     }
     else {
       secondEntry += numberValue
-      numberB = parseInt(secondEntry);
+      numberB = parseFloat(secondEntry);
       displayValue.textContent = numberB;
     }
     
@@ -104,29 +105,22 @@ operatorButtons.forEach(button => {
 
 //Equal Button
 const equalButton = document.querySelector(".equal-btn");
-equalButton.addEventListener("click", function(event){
-  operate(currentOperator);
-  displayValue.textContent = c;
-})
+equalButton.addEventListener("click", function (event) {
+  if (!numberSwitch && secondEntry) {
+    const result = operate(currentOperator);
+    firstEntry = result.toString();
+    secondEntry = "";
+    displayValue.textContent = firstEntry;
+    numberSwitch = true;
+  }
+});
 
 
 //Clear Button
 const clearButton = document.querySelector(".clear-btn");
-clearButton.addEventListener("click", function(event){
-  console.log("Cleared");
-})
-
-
-
-  /*
-if (clickedButton.classList.contains("num-btn")) {
-  const numberValue = clickedButton.getAttribute("data-key");
-  numA += numberValue.toString();
-  console.log(numA);
-}
-else if (clickedButton.classList.contains("operator-btn")) {
-  const operatorValue = clickedButton.getAttribute("data-key");
-  console.log(operatorValue);
-  operate(operatorValue);
-}
-*/
+clearButton.addEventListener("click", function (event) {
+  firstEntry = "0";
+  secondEntry = "0";
+  currentOperator = "";
+  displayValue.textContent = "0";
+});
